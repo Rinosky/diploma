@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LIDER</title>
+    <link rel="shortcut icon" href="http://lider.diit.edu.ua/theme/image.php/boost/theme/1493208768/favicon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/exp.js"></script>
+    <script src="js/makepdf.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="navbar navbar-default navbar-top"> <!-- Навигация -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">Открыть навигацию</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>  
+            </button>
+            <a class="navbar-brand hidden-sm-down" href="index.html">
+                <span class="site-name hidden-sm-down">
+                   LIDER 
+                </span>
+            </a>
+        </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                    <a href="theory.html">Теоретичні відомості</a>
+                    </li>
+                    <li>
+                    <a href="index.html">Лабораторна установка</a>
+                    </li>
+                    <li class="dropdown">
+                    <a href="about.html">О проекті</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="infoDiv">
+        <b>Параметри установки:</b>
+        <p class="text-primary">Амплітуда:</p>
+        <input class="form-control" type="text" id="A" size="9" value="80" />
+        <p class="mTop text-primary">Довжина нитки у сантиметрах: </p>
+        <input class="form-control" type="text" id="length" size="9" value="200"/>
+        <br/>
+        <p class="mTop"><input class="btn btn-primary" type="button" value="Запустити" onclick="clearInterval(timer); getData(this); pause();"/></p>
+        <p class="text-primary">Секундомір:</p>
+            <form name=TestForm>  
+                <div class="mTop">	<input class="form-control" name=stopwatch size=10 value="00:00:00:00"></div>
+                <div class="mTop"> <input class="btn btn-warning" type=button value="Обнулити" onclick="clearСlock()"></div>  
+            </form>
+        
+<div class="center">
+   
+    <div class="container center">
+    
+<canvas id="pendulum" width="500" height="500"></canvas>
+      
+    </div>
+</div>
+        
+
+
+<div class="container" id="makeit">
+    <div id="topdf" class="table-responsive">
+    <TABLE class="table table-condensed active" id="table">
+<caption><b>РЕЗУЛЬТАТИ</b><HR>
+ 
+  	 <TH class="info"> Номер експерименту </TH>
+  	 <TH class="info"> Амплітуда </TH>
+  	 <TH class="info"> Довжина нитки, см </TH>
+  	 <TH class="info"> Кількість коливань </TH>
+     <TH class="info"> Час 30-50 коливань, с </TH>
+     <TH class="info"> Час експерименту, с </TH>
+     <TH class="info"> Кут, градуси(рахується по формулі) </TH>
+     <TH class="info"> Теоретичний час(рахується по формулі), с </TH>
+     <TH class="info"> Період, % (рахується по формулі)</TH>
+        
+<TR>
+  	  	<TD> 1 </TD> 
+  	  	<TD> <input class="form-control" type="text" id="22" size="9" value="0" /> </TD>
+   		  <TD> <input class="form-control" type="text" id="1" value="0" /> </TD>
+ 	      <TD> <input class="form-control" type="text" id="4" size="9" value="0" /> </TD> 
+        <TD> <input class="form-control" type="text" id="7" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="10" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="13" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="16" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="19" size="9" value="0" /> </TD>
+</TR>
+<TR>
+  	  	<TD> 2 </TD> 
+  	  	<TD> <input class="form-control" type="text" id="23" size="9" value="0" /> </TD>
+   		  <TD> <input class="form-control" type="text" id="2" size="9" value="0" /> </TD>
+ 	      <TD> <input class="form-control" type="text" id="5" size="9" value="0" /> </TD> 
+        <TD> <input class="form-control" type="text" id="8" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="11" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="14" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="17" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="20" size="9" value="0" /> </TD>
+</TR>
+<TR>
+  	  	<TD> 3 </TD> 
+  	  	<TD> <input class="form-control" type="text" id="24" size="9" value="0" /> </TD>
+   		  <TD> <input class="form-control" type="text" id="3" size="9" value="0" /> </TD>
+ 	      <TD> <input class="form-control" type="text" id="6" size="9" value="0" /> </TD> 
+        <TD> <input class="form-control" type="text" id="9" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="12" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="15" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="18" size="9" value="0" /> </TD>
+        <TD> <input class="form-control" type="text" id="21" size="9" value="0" /> </TD>
+</TR>
+<TR>
+  	  	<TD class="success"> Середнє значення </TD> 
+  	  	<TD class="success"> <input class="form-control" type="text" id="sr8" size="9" value="0" /> </TD>
+   		  <TD class="success"> <input class="form-control" type="text" id="sr1" size="9" value="0" /> </TD>
+ 	      <TD class="success"> <input class="form-control" type="text" id="sr2" size="9" value="0" /> </TD> 
+        <TD class="success"> <input class="form-control" type="text" id="sr3" size="9" value="0" /> </TD>
+        <TD class="success"> <input class="form-control" type="text" id="sr4" size="9" value="0" /> </TD>
+        <TD class="success"> <input class="form-control" type="text" id="sr5" size="9" value="0" /> </TD>
+        <TD class="success"> <input class="form-control" type="text" id="sr6" size="9" value="0" /> </TD>
+        <TD class="success"> <input class="form-control" type="text" id="sr7" size="9" value="0" /> </TD>
+</TR>
+</table>
+    </div>
+</div>
+<hr>
+<div class="container">
+
+<input type="button" class="btn btn-success btn-lg" value=" PDF" onclick="javascript:genPDF()">
+<p class="mTop"><input class="btn btn-success btn-lg" type="button" value="Розрахувати табличні значення" onclick="srednee1()";/></p>
+   </div>
+    </div>
+</div>
+   
+   
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
